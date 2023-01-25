@@ -2,15 +2,20 @@ const router = require("express").Router();
 
 const User = require("../models/User");
 
-router.get("/", async (req, res) => {
-  const user = await new User({
-    username: "Luke",
-    email: "lukesheppard@gmail.com",
-    password: "password123",
+//Register User
+router.post("/register", async (req, res) => {
+  const newUser = new User({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
   });
 
-  await user.save();
-  res.send("test user");
+  try {
+    const user = await newUser.save();
+    res.status(200).json(user);
+  } catch (err) {
+    console.log("errow throwing at auth.js", err);
+  }
 });
 
 module.exports = router;
