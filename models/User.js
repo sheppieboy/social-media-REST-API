@@ -44,6 +44,21 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+
+    bio: {
+      type: String,
+      max: 50,
+    },
+
+    city: {
+      type: String,
+      max: 50,
+    },
+
+    relationship: {
+      type: Number,
+      enum: [1, 2, 3],
+    },
   },
   { timestamps: true }
 );
