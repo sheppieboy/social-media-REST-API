@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const helmet = require("helmet");
+
 //routes
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
@@ -11,6 +12,7 @@ dotenv.config();
 
 const server = express();
 
+mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URL, (err) => {
   if (err) console.log(err);
   console.log("Connected to mongoDB");
