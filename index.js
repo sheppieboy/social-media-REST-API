@@ -7,6 +7,7 @@ const helmet = require("helmet");
 //routes
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
+const postRoute = require("./routes/posts");
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ server.use(morgan("common"));
 
 server.use("/api/users", userRoute);
 server.use("/api/auth", authRoute);
+server.use("api/posts", postRoute);
 
 server.listen(port, () => {
   console.log(`backend server is ready to rumble @ port ${port}!`);
