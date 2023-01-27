@@ -29,7 +29,7 @@ server.use(morgan("common"));
 
 server.use("/api/users", userRoute);
 server.use("/api/auth", authRoute);
-server.use("api/posts", postRoute);
+server.use("/api/posts", postRoute);
 
 server.listen(port, () => {
   console.log(`backend server is ready to rumble @ port ${port}!`);
