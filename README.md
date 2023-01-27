@@ -2,7 +2,8 @@ This is a REST API for a generic social media web app that has Users and Posts w
 
 The REST API was built using the following technologies:
 
-- JS
+- Javscript
+- Node.js
 - MongDB for the database
 - Express for the server
 - Helmet
